@@ -1,0 +1,92 @@
+@slider-back-color: #cccccc;
+@slider-progress-color: #37a737;
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    overflow: hidden;
+    width: 98%;
+    -webkit-appearance: none;
+    background-color: @slider-back-color;
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 2px;
+    color: @slider-progress-color;
+    margin-top: 3px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 5px;
+    height: 15px;
+    border-radius: 15px;
+    margin-top: -8px;
+    cursor: pointer;
+    background: #434343;
+    -webkit-appearance: none;
+    box-shadow: -3000px 0 0 3000px @slider-progress-color;
+  }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: @slider-progress-color; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: @slider-back-color;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: @slider-progress-color; 
+}
+
+input[type="range"]{
+  position: absolute;
+  top: 4px;
+  left: 1%;
+  cursor: pointer;
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  &:hover{
+    opacity: 1;
+  }
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.player-container{
+  background: black;
+  color: white;
+  font-size: 16px;
+  overflow: auto;
+  position: relative;
+
+  .main-controls{
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 24px;
+  }
+  
+  .song-data{
+    padding: 24px 12px 12px 12px;
+    width: 400px;
+    overflow: auto;
+
+    .song-name, .song-desc{
+      float: left;
+      clear: left;
+    }
+    .song-name{
+      margin-bottom: 6px;
+      text-transform: capitalize;
+    }
+    .song-desc{
+      font-size: 0.8em;
+      color: #cccccc;
+    }
+  }
+}

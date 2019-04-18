@@ -1,0 +1,109 @@
+@active-color: #37a737;
+
+#play-list {
+  color: white;
+  cursor: default;
+
+  .title, .description{
+    text-align: left;
+    margin: 18px 8px;
+    font-weight: normal;
+  }
+
+  .description{
+    color: #ccc;
+    font-size: .8em;
+    margin-bottom: 24px;
+  }
+
+  h2{
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #ccc;
+    margin: -16px 8px 0 8px;
+    text-align: left;
+
+    .artist-link{
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .playlist-btn{
+    background: @active-color;
+    font-size: 0.9em;
+    color: white;
+    border-radius: 25px;
+    padding: 6px 24px;
+    position: absolute;
+    width: 136px;
+    top: 24px;
+    right: 36px;
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px black;
+
+    &:hover {
+      box-shadow: 2px 2px 2px black;
+    }
+    &:focus{
+      outline: none;
+    }
+
+    span {
+      margin-right:6px;
+    }
+  }
+
+  .song {
+    position: relative;
+    color: white;
+    text-transform: capitalize;
+    padding-left: 60px;
+
+    .action-btn{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      height: 64px;
+      background: black;
+      cursor: pointer;
+
+      span {
+        float: none;
+        display: block;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 15px;
+        height: 30px;
+        width: 30px;
+        box-sizing: border-box;
+        padding-top: 6px;
+        margin: 17px 9px;
+      }
+
+      &.active{
+        color: @active-color;
+        span {
+          border-color: @active-color;
+        }
+      }
+    }
+
+    .song-desc{
+      font-size: 0.8em;
+      color: #ccc;
+    }
+
+    .song-time{
+      font-size: 0.8em;
+      margin-top: -1.8em;
+    }
+
+    &.active {
+      box-shadow: 2px 2px 2px black;
+    }
+  }
+}

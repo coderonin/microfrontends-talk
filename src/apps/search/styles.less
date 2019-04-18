@@ -1,0 +1,88 @@
+@active-color: #37a737;
+
+#search-list {
+  color: white;
+  cursor: default;
+
+  .title, .description{
+    text-align: left;
+    margin: 18px 8px;
+    font-weight: normal;
+  }
+
+  .title{
+    font-size: 1.5em;
+  }
+
+  .description{
+    color: #ccc;
+    font-size: .8em;
+    margin-bottom: 24px;
+  }
+
+  li.song {
+    position: relative;
+    color: white;
+    text-transform: capitalize;
+    padding: 12px 18px 0 60px;
+
+    .action-btn{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      height: 64px;
+      background: black;
+      cursor: pointer;
+
+      span {
+        float: none;
+        display: block;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 15px;
+        height: 30px;
+        width: 30px;
+        box-sizing: border-box;
+        padding-top: 6px;
+        margin: 17px 9px;
+      }
+
+      &.active{
+        color: @active-color;
+        span {
+          border-color: @active-color;
+        }
+      }
+    }
+
+    .song-desc,
+    .song-name {
+      margin-bottom: 6px;
+      width: auto;
+    }
+
+    .song-desc{
+      font-size: 0.8em;
+      color: #ccc;
+      clear: left;
+      a {
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .song-time{
+      clear: right;
+      float: right;
+      width: auto;
+      margin: 0;
+      font-size: 0.8em;
+      margin-top: -1.8em;
+    }
+
+    &.active {
+      box-shadow: 2px 2px 2px black;
+    }
+  }
+}

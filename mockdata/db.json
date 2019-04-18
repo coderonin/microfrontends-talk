@@ -1,0 +1,37 @@
+{
+  "artists": {
+    "24232" : {
+      "id": "24232",
+      "name": "Artista de prueba",
+      "description" : "El de prueba",
+      "img": "/mi/foto/por/ahi",
+      "albums": ["1234567"]
+    }
+  },
+  "userplaylists" :[ "4543242", "1234567"],
+  "songs": [
+    { "id": "21", "name": "some 1", "album": "1234567", "artist": "24232", "duration": "3:20" },
+    { "id": "765", "name": "some 2", "album": "1234567", "artist": "24232", "duration": "2:20" },
+    { "id": "34", "name": "some 3", "album": "1234567", "artist": "24232", "duration": "1:15" },
+    { "id": "43245", "name": "some 4", "album": "1234567", "artist": "24232", "duration": "3:15" },
+    { "id": "23", "name": "some 5", "album": "1234567", "artist": "24232", "duration": "4:20" },
+    { "id": "43", "name": "some 6", "album": "1234567", "artist": "24232", "duration": "2:40" },
+    { "id": "658", "name": "some 7", "album": "1234567", "artist": "24232", "duration": "3:20" },
+    { "id": "87", "name": "some 8", "album": "1234567", "artist": "24232", "duration": "1:35" }
+  ],
+  "playlists" : {
+    "1234567": {
+      "id": "1234567",
+      "name": "Album de artista prueba",
+      "artist": "24232",
+      "desc": "todo un exito en los tests",
+      "songs": [ "21", "765", "34", "43245", "23", "43", "658", "87"]
+    },
+    "4543242": {
+      "id": "4543242",
+      "name": "Relajo",
+      "desc": "Creado por usuario",
+      "songs": [ "21", "765"]
+    }
+  }
+}
