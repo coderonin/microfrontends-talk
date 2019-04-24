@@ -91,7 +91,7 @@ class NavigationCmp extends HTMLElement {
 
   connectedCallback() {
     if (!window.NavApplication) {
-      import('/src/dist/NavApplication.js').then(this.renderApp.bind(this));
+      import(/* webpackIgnore: true */'/src/dist/NavApplication.js').then(this.renderApp.bind(this));
     } else {
       this.renderApp();
     }

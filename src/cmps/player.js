@@ -36,7 +36,7 @@ class PlayerCmp extends HTMLElement {
 
   loadApp() {
     if (!window.MusicPlayerApp) {
-      import('/src/dist/MusicPlayerApp.js').then(this.renderApp.bind(this));
+      import(/* webpackIgnore: true */'/src/dist/MusicPlayerApp.js').then(this.renderApp.bind(this));
     } else {
       this.renderApp();
     }

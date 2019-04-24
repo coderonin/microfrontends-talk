@@ -71,7 +71,7 @@ class ArtistCmp extends HTMLElement {
     super();
     this._shadowRoot = this.attachShadow({ 'mode': 'open' });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
-    this.$btn = this._shadowRoot.querySelector('button');
+    this.appNode = this._shadowRoot.getElementById('artist-app');
   }
   
   static get observedAttributes() {
@@ -79,18 +79,20 @@ class ArtistCmp extends HTMLElement {
   }
 
   connectedCallback() {
-      console.log('Element is inserted to the DOM');
+    if (!window.ArtistApp) {
+      import(/* webpackIgnore: true */'/src/dist/ArtistApp.js').then(this.renderApp.bind(this));
+    } else {
+      this.renderApp();
+    }
   }
 
-  disconnectedCallback() {
-      console.log('Element is removed from the DOM. Clean up time!');
+  renderApp(){
+    window.ArtistApp.startApp(this._artist, this, this.appNode);
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-      console.log(`Observed Attribute: ${name} changed!`);
+    this[`_${name}`] = newVal;
   }
 }
 
 window.customElements.define('artist-page', ArtistCmp);
-
-

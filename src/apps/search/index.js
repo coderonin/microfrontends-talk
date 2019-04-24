@@ -6,7 +6,6 @@ import styles from './styles.less';
 export const startApp = (appPublicNode, appTargetNode, query) => {
 
   class SearchApp extends React.Component {
-
     constructor(props) {
       super(props);
       this.playlistId = `PLAYLIST_SEARCH_${query}`;

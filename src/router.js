@@ -1,6 +1,9 @@
 const getParams = () => window.location.pathname.substr(1).split("/")[1];
 const cleanPath = (path) => "/" + (path.substr(1).split("/")[0]);
 
+const getSubRoute = () => window.location.pathname.substr(1).split("/")[2];
+const getSubRouteParams = () => window.location.pathname.substr(1).split("/")[3];
+
 const routes = {
   '/' : () => '<home-page></home-page>',
   '/search' : () => {
@@ -9,7 +12,11 @@ const routes = {
   },
   '/artist' : () => {
     const artistId = getParams();
-    return `<artist-page artist="${artistId}"></artist-page>`;
+    let html = `<artist-page artist="${artistId}"></artist-page>`;
+    if (getSubRoute() == 'playlist') {
+      html += `<play-list playlist="${getSubRouteParams()}"></play-list>`
+    }
+    return html;
   },
   '/playlist' : () => {
     const playlistId = getParams();

@@ -4,6 +4,12 @@ const db = require('./db.json');
 const routes = express.Router();
 const songsMap = {};
 db.songs.forEach( song => songsMap[song.id] = song);
+const homeMap = Object.keys(db.home).reduce(
+  (result, value) => {
+    result[value] = db.home[value].map(
+      (artist) => db.artists[artist]);
+    return result;
+  },{});
 
 const getFullSong = (song) => {
   const newSong = Object.assign({}, song);
@@ -43,7 +49,7 @@ routes.get('/playlist/:id', (req, res) => {
 routes.get('/artist/:id', (req, res) => {
   const status = !!db.artists[req.params.id] ? 200 : 404;
   const artist = Object.assign({}, db.artists[req.params.id] || {albums:[]});
-  artist.albums = artist.albums.map((id)=> ({ id, name: db.playlists[id].name, desc: db.playlists[id].desc  }));
+  artist.albums = artist.albums.map((id)=> ({ id, name: db.playlists[id].name, desc: db.playlists[id].desc, count: db.playlists[id].songs.length }));
   return res.status(status).send(artist);
 });
 
@@ -77,5 +83,8 @@ routes.get('/stream/:id', (req, res) => {
   });
 });
 
+routes.get('/top', (req, res) => {
+  return res.status(200).send(homeMap);
+});
 
 module.exports = routes;

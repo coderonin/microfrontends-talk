@@ -141,7 +141,7 @@ class Playlist extends HTMLElement {
 
   connectedCallback() {
     if (!window.PlaylistApplication) {
-      import('/src/dist/PlaylistApplication.js').then(this.renderApp.bind(this));
+      import(/* webpackIgnore: true */'/src/dist/PlaylistApplication.js').then(this.renderApp.bind(this));
     } else {
       this.renderApp();
     }

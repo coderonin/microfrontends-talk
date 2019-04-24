@@ -7,5 +7,7 @@
     }],
     ["react"]
   ],
-  "plugins": []
+  "plugins": [
+    "syntax-dynamic-import"
+  ]
 }

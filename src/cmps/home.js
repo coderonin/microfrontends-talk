@@ -8,6 +8,7 @@ template.innerHTML = `
     font-family: sans-serif;
     text-align: center;
     flex: 1;
+    overflow: hidden;
     background: linear-gradient(to left, #243B55, #141E30);
   }
 
@@ -49,14 +50,14 @@ template.innerHTML = `
     margin: auto 12px;
   }
 
-  #sample-artists{
+  .sample-artists{
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     padding: 0 18px;
   }
 
-  #sample-artists .box{
+  .sample-artists .box{
     position: relative;
     width: 180px;
     height: 260px;
@@ -111,22 +112,20 @@ class HomeCmp extends HTMLElement {
     super();
     this._shadowRoot = this.attachShadow({ 'mode': 'open' });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
-    this.$btn = this._shadowRoot.querySelector('button');
+    this.appNode = this._shadowRoot.getElementById('home-app');
   }
 
   connectedCallback() {
-      console.log('Element is inserted to the DOM');
+    if (!window.HomeApp) {
+      import(/* webpackIgnore: true */'/src/dist/HomeApp.js').then(this.renderApp.bind(this));
+    } else {
+      this.renderApp();
+    }
   }
 
-  disconnectedCallback() {
-      console.log('Element is removed from the DOM. Clean up time!');
-  }
-
-  attributeChangedCallback(name, oldVal, newVal) {
-      console.log(`Observed Attribute: ${name} changed!`);
+  renderApp(){
+    window.HomeApp.startApp(this, this.appNode);
   }
 }
 
 window.customElements.define('home-page', HomeCmp);
-
-

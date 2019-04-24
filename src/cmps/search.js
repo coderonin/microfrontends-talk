@@ -150,7 +150,7 @@ class SearchResultCmp extends HTMLElement {
 
   connectedCallback() {
     if (!window.SearchApp) {
-      import('/src/dist/SearchApp.js').then(this.renderApp.bind(this));
+      import(/* webpackIgnore: true */'/src/dist/SearchApp.js').then(this.renderApp.bind(this));
     } else {
       this.renderApp();
     }

@@ -151,7 +151,7 @@ export const startApp = (playlist, track, appPublicNode, appTargetNode) => {
       return (<div className="player-container">
         <div className="song-data">
           <span className="song-name">{song.name}</span>
-          <span className="song-desc">{song.album}, by {song.artist}</span>
+          <span className="song-desc">{song.album.name}, by {song.artist.name}</span>
         </div>
         <div className="main-controls">
           <a onClick={() => this.clickActionBtn()}><span className={`icon-${running? 'pause':'play'}`}></span></a>
