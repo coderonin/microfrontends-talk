@@ -1,14 +1,35 @@
 {
   "home": {
-    "OVERVIEW": ["24232", "24232", "24232", "24232", "24232", "24232", "24232"],
-    "FEATURED": ["24232", "24232", "24232", "24232", "24232", "24232", "24232"], 
-    "NEWRELEASES": ["24232", "24232", "24232", "24232", "24232", "24232", "24232"],
-    "DISCOVER": ["24232", "24232", "24232", "24232", "24232", "24232", "24232"]
+    "OVERVIEW": ["876", "283", "24232", "457"],
+    "FEATURED": ["457", "24232", "24232", "283", "24232", "876", "24232"], 
+    "NEWRELEASES": ["24232", "283", "24232", "24232", "457", "24232", "24232"],
+    "DISCOVER": ["24232", "876", "24232", "283", "24232", "24232", "457"]
   },
   "artists": {
     "24232" : {
       "id": "24232",
       "name": "Artista de prueba",
+      "description" : "El de prueba",
+      "img": "/imgs/some.jpg",
+      "albums": ["1234567"]
+    },
+    "283" : {
+      "id": "283",
+      "name": "Zakir Hussain",
+      "description" : "He was awarded the Padma Shri in 1988, and the Padma Bhushan in 2002, by the Government of India presented by President Abdul Kalam. He was also awarded the Sangeet Natak Akademi Award in 1990, given by the Sangeet Natak Academy, India's National Academy of Music, Dance & Drama. In 1999, he was awarded the United States National Endowment for the Arts' National Heritage Fellowship, the highest award given to traditional artists and musicians.",
+      "img": "/imgs/indian.jpg",
+      "albums": ["12"]
+    },
+    "457" : {
+      "id": "457",
+      "name": "El Mariachi",
+      "description" : "El Mariachi received a Grammy nomination for best Mexican-American album. Academic programs allow for instruction by famous mariachi groups and the opportunity to win awards. The real mexican mariachi very well known in globant as a charismatic PM",
+      "img": "/imgs/mariachi.jpg",
+      "albums": ["1", "2", "3", "4", "5", "6"]
+    },
+    "876" : {
+      "id": "876",
+      "name": "Sandro",
       "description" : "El de prueba",
       "img": "/imgs/some.jpg",
       "albums": ["1234567"]
@@ -23,7 +44,20 @@
     { "id": "23", "name": "some 5", "album": "1234567", "artist": "24232", "duration": "4:20" },
     { "id": "43", "name": "some 6", "album": "1234567", "artist": "24232", "duration": "2:40" },
     { "id": "658", "name": "some 7", "album": "1234567", "artist": "24232", "duration": "3:20" },
-    { "id": "87", "name": "some 8", "album": "1234567", "artist": "24232", "duration": "1:35" }
+    { "id": "87", "name": "some 8", "album": "1234567", "artist": "24232", "duration": "1:35" },
+    { "id": "1", "name": "Dancing on One Foot", "album": "12", "artist": "283", "duration": "9:04" },
+    { "id": "2", "name": "Tales of Rumi", "album": "12", "artist": "283", "duration": "11:58" },
+    { "id": "3", "name": "Sangam", "album": "12", "artist": "283", "duration": "9:20" },
+    { "id": "4", "name": "Nataraj", "album": "12", "artist": "283", "duration": "2:47" },
+    { "id": "5", "name": "Guman", "album": "12", "artist": "283", "duration": "11:40" },
+    { "id": "6", "name": "Tender Warriors", "album": "12", "artist": "283", "duration": "8:56" },
+    { "id": "7", "name": "Hymn to the Mother", "album": "12", "artist": "283", "duration": "11:49" },
+    { "id": "8", "name": "Lady in the Harbor", "album": "12", "artist": "283", "duration": "3:27" },
+    { "id": "9", "name": "Little Peace", "album": "12", "artist": "283", "duration": "5:53" },
+    { "id": "1000", "name": "Guadalajara", "album": "1", "artist": "457", "duration": "5:53" },
+    { "id": "1001", "name": "Yo el Aventurero (Huapango)", "album": "1", "artist": "457", "duration": "3:00" },
+    { "id": "1002", "name": "Que Padre Es la Vida (Huapango)", "album": "1", "artist": "457", "duration": "3:02" },
+    { "id": "1003", "name": "Bala Perdida (Ranchera)", "album": "1", "artist": "457", "duration": "3:20" }
   ],
   "playlists" : {
     "1234567": {
@@ -38,6 +72,55 @@
       "name": "Relajo",
       "desc": "Creado por usuario",
       "songs": [ "21", "765"]
+    },
+    "12": {
+      "id": "12",
+      "name": "Sangam",
+      "artist": "283",
+      "desc": "Sangam is a live album by jazz saxophonist Charles Lloyd recorded in Santa Barbara, California in May 2004 by Lloyd with Zakir Hussain, and Eric Harland.",
+      "songs": [ "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    "1": {
+      "id": "1",
+      "name": "Mariachis menace",
+      "artist": "457",
+      "desc": "The real mexican mariachi very well known in globant as a charismatic PM",
+      "songs": [ "1002", "1003"]
+    },
+    "2": {
+      "id": "2",
+      "name": "Mariachis Wars",
+      "artist": "457",
+      "desc": "The real mexican mariachi 1 new song.",
+      "songs": [ "1001", "1002", "1003"]
+    },
+    "3": {
+      "id": "3",
+      "name": "The Revenge of the Mariachis",
+      "artist": "457",
+      "desc": "The real mexican mariachi taking very seriously Machetes revenge.",
+      "songs": [ "1000", "1001", "1002", "1003"]
+    },
+    "4": {
+      "id": "4",
+      "name": "The new Mariachis",
+      "artist": "457",
+      "desc": "The real mexican mariachi same songs",
+      "songs": [ "1000", "1003"]
+    },
+    "5": {
+      "id": "5",
+      "name": "Mariachis Strikes back",
+      "artist": "457",
+      "desc": "The real mexican mariachi strikes back at globant",
+      "songs": [ "1000", "1001", "1002", "1003"]
+    },
+    "6": {
+      "id": "6",
+      "name": "Mariachis Returns",
+      "artist": "457",
+      "desc": "The real mexican mariachi returns with same songs nothing new.",
+      "songs": [ "1000", "1001", "1002", "1003"]
     }
   }
 }
